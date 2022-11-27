@@ -1,4 +1,103 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-27T10:47:10-03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2022/09/07/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2022-09-07T03:25:49-03:00</published><updated>2022-09-07T03:25:49-03:00</updated><id>http://localhost:4000/jekyll/update/2022/09/07/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2022/09/07/welcome-to-jekyll.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-27T10:50:52-03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Como Instalar Ruby En Gnulinux</title><link href="http://localhost:4000/2022/11/27/Como-instalar-ruby-en-gnulinux.html" rel="alternate" type="text/html" title="Como Instalar Ruby En Gnulinux" /><published>2022-11-27T00:00:00-03:00</published><updated>2022-11-27T00:00:00-03:00</updated><id>http://localhost:4000/2022/11/27/Como-instalar-ruby-en-gnulinux</id><content type="html" xml:base="http://localhost:4000/2022/11/27/Como-instalar-ruby-en-gnulinux.html"><![CDATA[<h2 id="como-instalar-ruby-en-gnulinux-sin-volverse-loco">Como instalar ruby en gnu/linux sin volverse loco</h2>
+<p>Podemos usar alguno de estos dos gestores de versiones de ruby : RVM o rbenv</p>
+
+<p>En este caso vamos a hacerlo con rbenv ,¿por qué? porque se me da la gana</p>
+
+<h4 id="observación-importante">Observación importante:</h4>
+<p>No debemos tener instalados RVM y rbenv al mismo tiempo porque trae conflictos. Debemos elegir uno o el otro.</p>
+
+<ul>
+  <li>1 ° paso : instalar rbenv</li>
+</ul>
+
+<p>Para instalar rbenv lo mejor es NO hacerlo mediante los repositorios oficiales de las distros , ya que suele estar desactualizado.</p>
+
+<p>En cambio vamos directamente al repositorio del proyecto y lo clonamos</p>
+
+<pre><code class="language-git">git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+</code></pre>
+
+<ul>
+  <li>2 ° paso : Agregamos el directorio rbenv a la variable de entorno $PATH.
+Esto es para que luego se pueda ejecutar como un comando más de bash rbenv , y no tengamos que especificar toda la ruta hasta la carpeta cada vez que lo usemos.</li>
+</ul>
+
+<pre><code class="language-git">echo 'export PATH="$HOME/.rbenv/bin:$PATH"' &gt;&gt; ~/.bashrc 
+echo 'eval "$(rbenv init -)"' &gt;&gt; ~/.bashrc 
+source ~/.bashrc
+</code></pre>
+
+<p><em>Nota</em> : estos pasos son para el shell bash , si tenés otro fijate en la documentación del mismo como hacerlo.</p>
+
+<ul>
+  <li>3 ° paso : Configuramos rbenv</li>
+</ul>
+
+<pre><code class="language-git">~/.rbenv/bin/rbenv init
+</code></pre>
+
+<ul>
+  <li>4 ° paso : Reiniciamos la terminal . Cerramos y la abrimos nuevamente para que tomen efecto los cambios.</li>
+  <li>5 ° paso : Verificamos que la instalación haya sido exitosa con el siguiente comando</li>
+</ul>
+
+<pre><code class="language-git">curl -fsSL https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-doctor | bash
+</code></pre>
+<p>Y deberíamos obtener lo siguiente como salida.</p>
+
+<pre><code class="language-git">Checking for `rbenv' in PATH: /usr/local/bin/rbenv
+Checking for rbenv shims in PATH: OK
+Checking `rbenv install' support: /usr/local/bin/rbenv-install (ruby-build 20170523)
+Counting installed Ruby versions: none
+  There arent any Ruby versions installed under `~/.rbenv/versions'.
+  You can install Ruby versions like so: rbenv install 2.2.4
+Checking RubyGems settings: OK
+Auditing installed plugins: OK
+</code></pre>
+
+<ul>
+  <li>6 ° Paso : Ahora sí , instalamos Ruby .</li>
+  <li>Listamos las versiones disponibles
+    <pre><code class="language-git"> rbenv install -l
+</code></pre>
+    <p>y por ejemplo en este momento obtenemos las siguientes :</p>
+  </li>
+</ul>
+
+<pre><code class="language-git">2.6.10
+2.7.6
+3.0.4
+3.1.2
+jruby-9.3.7.0
+mruby-3.1.0
+picoruby-3.0.0
+rbx-5.0
+truffleruby-22.2.0
+truffleruby+graalvm-22.2.0
+
+Only latest stable releases for each Ruby implementation are shown.
+Use 'rbenv install --list-all / -L' to show all local versions.
+</code></pre>
+<p>En mi caso voy a instalar la más actual : 3.1.2</p>
+
+<pre><code class="language-git">rbenv install ruby 3.1.2
+</code></pre>
+
+<p>Podría suceder que aparezcan errores si no tenemos en el sistema las dependencias necesarias. Como por ejemplo <em>openssl</em> y <em>libssl-dev</em>, en ese caso instalarlas y volver a intentarlo.</p>
+
+<p>Y con eso ya lo tenemos listo. Podemos ver que se instaló con :</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby <span class="nt">-v</span>
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby 3.1.2p20 <span class="o">(</span>2022-04-12 revision 4491bb740a<span class="o">)</span> <span class="o">[</span>x86_64-linux]
+</code></pre></div></div>
+
+<p>El chiste de rbenv es poder tener múltiples versiones de ruby e ir usando cada una donde se necesite. Para instalar otra versión distinta seguimos los mismos pasos. Y para listar todas las que tengamos instaladas</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rbenv versions
+</code></pre></div></div>
+
+<p>rbenv tiene más comandos para configurar la versión <em>global</em> y <em>local</em> . Leer la documentación en https://github.com/rbenv/rbenv</p>]]></content><author><name></name></author><summary type="html"><![CDATA[Como instalar ruby en gnu/linux sin volverse loco Podemos usar alguno de estos dos gestores de versiones de ruby : RVM o rbenv]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2022/09/07/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2022-09-07T03:25:49-03:00</published><updated>2022-09-07T03:25:49-03:00</updated><id>http://localhost:4000/jekyll/update/2022/09/07/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2022/09/07/welcome-to-jekyll.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
 
 <p>Jekyll requires blog post files to be named according to the following format:</p>
 
