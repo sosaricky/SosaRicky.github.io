@@ -1,3 +1,9 @@
+---
+layout: post
+title:  "Instalar ruby en GNU/Linux!"
+---
+
+
 ## Como instalar ruby en gnu/linux sin volverse loco
 Podemos usar alguno de estos dos gestores de versiones de ruby : RVM o rbenv
 
