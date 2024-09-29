@@ -119,3 +119,6 @@ git -C plugins/ruby-build pull
 
 # La opción -C es porque ruby-build tiene su propio repo.
 ```
+
+Listo , ya está actualizado.Ahora nos va a listar las versiones más recientes disponibles para instalar cuando hagamos `rbenv install -l`.
+
