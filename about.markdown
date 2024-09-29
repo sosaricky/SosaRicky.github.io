@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-### **Raúl R Sosa.**
+### **Ricky Sosa.**

@@ -107,3 +107,15 @@ rbenv versions
 ```
 
 rbenv tiene más comandos para configurar la versión *global* y *local* . Leer la documentación en https://github.com/rbenv/rbenv
+
+### Quiero instalar una versión de ruby que rbenv no muestra.
+
+Si al hacer `rbenv install -l` en las versiones disponibles a instalar no se encuentra la que deseamos (recordar que solo muestra versiones estables) entonces debemos actualizar ruby-build , la herramienta que se encarga de instalar las versiones de ruby.
+
+Vamos a ir a la carpeta donde se instaló rbenv y una vez dentro de ella traemos los cambios que se hayan hecho a ruby-build desde el repo oficial de rbenv.
+
+```sh
+git -C plugins/ruby-build pull
+
+# La opción -C es porque ruby-build tiene su propio repo.
+```
